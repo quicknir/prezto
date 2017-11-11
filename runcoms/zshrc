@@ -10,4 +10,12 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Customize to your needs...
+# Better ls coloring when using solarized terminal theme
+# Start by figuring out where dircolors is, by figuring out where this file is
+location=$(readlink -f ${(%):-%N})
+termdir="${location:h}/../.."
+eval $(eval "dircolors ${location:h}/../../dircolors-solarized/dircolors.ansi-light")
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
+# Set terminal
+export TERM=xterm-256color
