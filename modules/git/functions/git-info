@@ -257,7 +257,8 @@ function git-info {
   zstyle -s ':prezto:module:git:info:remote' format 'remote_format'
   if [[ -n "$branch" && -n "$remote_format" ]]; then
     # Gets the remote name.
-    remote_cmd='command git rev-parse --symbolic-full-name --verify HEAD@{upstream}'
+#   remote_cmd='git rev-parse --symbolic-full-name --verify HEAD@{upstream}' NF
+    remote_cmd='git rev-parse --symbolic-full-name --verify origin/master'
     remote="${$(${(z)remote_cmd} 2> /dev/null)##refs/remotes/}"
     if [[ -n "$remote" ]]; then
       zformat -f remote_formatted "$remote_format" "R:$remote"
@@ -268,7 +269,8 @@ function git-info {
   zstyle -s ':prezto:module:git:info:behind' format 'behind_format'
   if [[ -n "$branch" && ( -n "$ahead_format" || -n "$behind_format" ) ]]; then
     # Gets the commit difference counts between local and remote.
-    ahead_and_behind_cmd='command git rev-list --count --left-right HEAD...@{upstream}'
+#   ahead_and_behind_cmd='git rev-list --count --left-right HEAD...@{upstream}' NF
+    ahead_and_behind_cmd='git rev-list --count --left-right HEAD...origin/master'
 
     # Get ahead and behind counts.
     ahead_and_behind="$(${(z)ahead_and_behind_cmd} 2> /dev/null)"
