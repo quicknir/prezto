@@ -21,7 +21,7 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 export TERM=xterm-256color
 
 # Ensure that external editor launches correctly
-export VISUAL='emacsclient -nw -s foo -a ""'
+export VISUAL='emacsclient -nw -s foo --alternate-editor='
 
 alias vi='emacsclient -nw -s foo -a ""'
 alias vim='emacsclient -nw -s foo -a ""'
