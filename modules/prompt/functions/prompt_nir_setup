@@ -82,7 +82,6 @@ function prompt_nir_setup {
   zstyle ':prezto:module:git:info:ahead' format ' %F{green}%A⬆%f'
   zstyle ':prezto:module:git:info:behind' format ' %F{red}%B⬇%f'
   zstyle ':prezto:module:git:info:branch' format '%F{9}%b%f'
-  zstyle ':prezto:module:git:info:commit' format ':%F{green}%.7c%f'
   zstyle ':prezto:module:git:info:deleted' format ' %F{red}%d✖%f'
   zstyle ':prezto:module:git:info:modified' format ' %F{blue}%m✱%f'
   zstyle ':prezto:module:git:info:position' format ':%F{red}%p%f'
