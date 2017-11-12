@@ -314,7 +314,7 @@ bindkey -M emacs "$key_info[Escape];" pound-toggle
 #
 
 # Edit command in an external editor emacs style (v is used for visual mode)
-bindkey -M vicmd "$key_info[Control]X$key_info[Control]E" edit-command-line
+bindkey -M vicmd "$key_info[Control]E" edit-command-line
 
 # Undo/Redo
 bindkey -M vicmd "u" undo
